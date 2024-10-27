@@ -24,7 +24,7 @@
                             />
                         </template>
                         <v-list-item
-                            v-for="child in route.children"
+                            v-for="child in route.children.filter((child) => child.meta?.menuItem)"
                             :key="child.name"
                             color="primary"
                             :prepend-icon="child.meta?.menuItem?.icon"

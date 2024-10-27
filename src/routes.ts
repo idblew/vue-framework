@@ -5,6 +5,8 @@ import ReloadRoute from "./routing/ReloadRoute.vue";
 // use dynamic imports to enable route based code splitting
 const AlphaView = () => import("./alpha/AlphaView.vue");
 const BetaView = () => import("./beta/BetaView.vue");
+const Beta1View = () => import("./beta/Beta1View.vue");
+const Beta2View = () => import("./beta/Beta2View.vue");
 
 interface RouteMenuItem {
     index: number;
@@ -79,7 +81,6 @@ const routes: Readonly<RouteRecordRaw[]> = [
     {
         name: "Beta",
         path: "/beta",
-        components: { main: BetaView },
         meta: {
             menuItem: {
                 index: 2,
@@ -88,6 +89,36 @@ const routes: Readonly<RouteRecordRaw[]> = [
                 description: "Beta",
             },
         },
+        children: [
+            {
+                path: "",
+                components: { main: BetaView },
+            },
+            {
+                name: "Beta 1",
+                path: "1",
+                components: { main: Beta1View },
+                meta: {
+                    menuItem: {
+                        index: 1,
+                        icon: "mdi-numeric-1-circle-outline",
+                        title: "Beta 1",
+                    },
+                },
+            },
+            {
+                name: "Beta 2",
+                path: "2",
+                components: { main: Beta2View },
+                meta: {
+                    menuItem: {
+                        index: 2,
+                        icon: "mdi-numeric-2-circle-outline",
+                        title: "Beta 2",
+                    },
+                },
+            },
+        ],
     },
 ];
 
