@@ -91,6 +91,7 @@ const routes: Readonly<RouteRecordRaw[]> = [
         },
         children: [
             {
+                name: "Default",
                 path: "",
                 components: { main: BetaView },
             },
@@ -100,7 +101,7 @@ const routes: Readonly<RouteRecordRaw[]> = [
                 components: { main: Beta1View },
                 meta: {
                     menuItem: {
-                        index: 1,
+                        index: 0,
                         icon: "mdi-numeric-1-circle-outline",
                         title: "Beta 1",
                     },
@@ -112,7 +113,7 @@ const routes: Readonly<RouteRecordRaw[]> = [
                 components: { main: Beta2View },
                 meta: {
                     menuItem: {
-                        index: 2,
+                        index: 1,
                         icon: "mdi-numeric-2-circle-outline",
                         title: "Beta 2",
                     },
